@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ====== NAVBAR ====== */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      transition: background 0.3s, color 0.3s;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #222;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      z-index: 1000;
+    }
+    nav .logo {
+      font-weight: bold;
+      font-size: 20px;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #4e7fff;
+    }
+
+    /* Dark/Light Mode Button */
+    .mode-toggle {
+      background: #4e7fff;
+      border: none;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+    .mode-toggle:hover {
+      background: #2e5ce6;
+    }
+
+    /* ====== DARK MODE ====== */
+    body.dark-mode {
+      background: #121212;
+      color: #e0e0e0;
+    }
+    body.dark-mode nav {
+      background: #111;
+    }
+    body.dark-mode nav ul li a {
+      color: #e0e0e0;
+    }
+    body.dark-mode section {
+      /*background: #1e1e1e !important;*/
+    }
+    body.dark-mode h2, 
+    body.dark-mode h3 {
+      color: #fff !important;
+    }
+
+    /* ====== BALLS ANIMATION ====== */
+    #balls-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+    .ball {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: move 20s infinite linear;
+    }
+    @keyframes move {
+      from { transform: translateY(100vh) translateX(0); }
+      to   { transform: translateY(-100vh) translateX(50vw); }
+    }
+
+    /* ====== PAGE CONTENT SPACING ====== */
+    section {
+      padding: 80px 20px;
+      position: relative;
+      z-index: 1;
+    }
+    #hero {
+      margin-top: 60px; /* offset for navbar */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Balls Background -->
+  <div id="balls-bg"></div>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">My Portfolio</div>
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="mode-toggle" onclick="toggleMode()">🌙 Dark Mode</button>
+  </nav>
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+
+
+</head>
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+<script>
+  VANTA.WAVES({
+    el: "#vanta-bg",
+    mouseControls: true,
+    touchControls: true,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    scale: 1.00,
+    scaleMobile: 1.00
+  })
+</script>
+
+  <div id="vanta-bg"></div>
+
+  <section id="hero" class="hero">
+  <div class="container hero-content">
+    <div class="hero-image">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\22a91a4460.png" alt="Your Name" />
+    </div>
+    <div class="hero-text">
+      <p>Hello, I'm</p>
+      <h1><span class="highlight">Data Analyst</span></h1>
+      <h2>& Business Intelligence Expert</h2>
+      <p class="summary">
+        Transforming complex data into actionable insights through Power BI, Python, SQL, and Microsoft Fabric.
+        Specialized in building intelligent dashboards and predictive analytics solutions.
+      </p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Get In Touch</a>
+        <a href="C:\Users\DELL\Desktop\portfolio\sravanikarnataka.pdf" class="btn btn-outline" download>📄 Download Resume</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- <section id="skills" class="container">
+  <h2><span>Skills &</span> <span style="color: #4e7fff;">Expertise</span></h2>
+  <p>A comprehensive toolkit for modern data analysis and business intelligence</p>
+
+  <h3 style="margin-top: 30px;">Technical Proficiency</h3>
+  
+  <div class="skill-bars">
+    <div class="skill">
+      <span>Power BI</span>
+      <div class="bar">
+        <div class="fill" style="width: 95%;"></div>
+      </div>
+      <span class="percent">95%</span>
+    </div>
+
+    <div class="skill">
+      <span>SQL</span>
+      <div class="bar">
+        <div class="fill" style="width: 90%;"></div>
+      </div>
+      <span class="percent">90%</span>
+    </div>
+
+    <div class="skill">
+      <span>Python</span>
+      <div class="bar">
+        <div class="fill" style="width: 85%;"></div>
+      </div>
+      <span class="percent">85%</span>
+    </div>
+
+    <div class="skill">
+      <span>Microsoft Fabric</span>
+      <div class="bar">
+        <div class="fill" style="width: 80%;"></div>
+      </div>
+      <span class="percent">80%</span>
+    </div>
+
+    <div class="skill">
+      <span>Excel</span>
+      <div class="bar">
+        <div class="fill" style="width: 95%;"></div>
+      </div>
+      <span class="percent">95%</span>
+    </div>
+
+    <div class="skill">
+      <span>Data Modeling</span>
+      <div class="bar">
+        <div class="fill" style="width: 90%;"></div>
+      </div>
+      <span class="percent">90%</span>
+    </div>
+  </div>
+</section> -->
+<section id="skills" class="container">
+  <h2><span>Skills &</span> <span style="color: #4e7fff;">Expertise</span></h2>
+  <p>A comprehensive toolkit for modern data analysis and business intelligence</p>
+  
+  <div class="skills-grid">
+    <div class="skill-box">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\Microsoft-Power-BI-Logo.png" alt="HTML" />
+      <span>Power BI</span>
+    </div>
+    <div class="skill-box">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\Fabric_final_x256.png" alt="CSS" />
+      <span>Microsoft Fabric</span>
+    </div>
+    <div class="skill-box">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\tableau-software.png" alt="SASS" />
+      <span>Tableau</span>
+    </div>
+    <div class="skill-box">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\Microsoft_Excel-Logo.wine.png" alt="JavaScript" />
+      <span>Microsoft Excel</span>
+    </div>
+    <div class="skill-box">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\C_Programming_Language.svg.png" alt="React" />
+      <span>C/span>
+    </div>
+    <div class="skill-box">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\5968350.png" alt="React" />
+      <span>Python</span>
+    </div>
+    <div class="skill-box">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\226777.png" alt="React" />
+      <span>Java</span>
+    </div>
+    <div class="skill-box">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\17266017.png" alt="React" />
+      <span>SQL</span>
+    </div>
+    <div class="skill-box">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\Microsoft-Power-Pages-Icon-2022.png" alt="React" />
+      <span>Power Pages</span>
+    </div>
+
+    
+    <!-- Add more skills here -->
+  </div>
+  <div class="skills-categories">
+    <div class="category-card">
+      <h3>Business Intelligence</h3>
+      <span class="tag">Power BI</span>
+      <span class="tag">Tableau</span>
+      <span class="tag">Microsoft Fabric</span>
+      <span class="tag">DAX</span>
+    </div>
+
+    <div class="category-card">
+      <h3>Programming & Analytics</h3>
+      <span class="tag">Python</span>
+      <span class="tag">SQL</span>
+      <span class="tag">JAVA</span>
+      <span class="tag">R</span>
+      <span class="tag">Pandas</span>
+      <span class="tag">NumPy</span>
+    </div>
+
+    <div class="category-card">
+      <h3>Data Management</h3>
+      <span class="tag">Data Modeling</span>
+      <span class="tag">ETL</span>
+      <span class="tag">Data Warehousing</span>
+      <span class="tag">MySQL</span>
+    </div>
+
+    <div class="category-card">
+      <h3>Visualization & Reporting</h3>
+      <span class="tag">Dashboard Design</span>
+      <span class="tag">KPI Development</span>
+      <span class="tag">Predictive Analytics</span>
+    </div>
+  </div>
+</section>
+</section>
+
+
+<!-- Education Section -->
+<section id="education" style="padding: 60px 20px; ">
+  <div style="max-width: 900px; margin: auto;">
+    <h2 style="text-align: center; font-size: 32px; margin-bottom: 20px;">Education</h2>
+    
+    <!-- B.Tech -->
+    <div>
+      <h3 style="margin: 0; font-size: 22px; color: #2c3e50;">B.Tech in Data Science</h3>
+      <div style="background: #fff;padding: 20px;padding: 20px; border-radius: 10px; margin-bottom: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"><p style="margin: 5px 0; font-size: 16px; color: #555;">Aditya Engineering College, Andhra Pradesh</p>
+      <p style="margin: 5px 0; font-size: 15px; color: #777;">2022 – 2026</p>
+      <p style="margin: 5px 0; font-size: 15px; color: #2c3e50;"><strong>CGPA:</strong> 8.2 / 10</p>
+      <p style="margin: 5px 0; font-size: 15px; color: #2c3e50;"><strong>Percentage:</strong> 75%</p></div>
+    </div>
+
+    <!-- Intermediate -->
+    <div >
+      <h3 style="margin: 0; font-size: 22px; color: #2c3e50;">Intermediate (MPC)</h3>
+      <div style="background: #fff; padding: 20px; border-radius: 10px; margin-bottom: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+      <p style="margin: 5px 0; font-size: 16px; color: #555;">Aditya Junior College</p>
+      
+      <p style="margin: 5px 0; font-size: 15px; color: #777;">2020 – 2022</p>
+      <p style="margin: 5px 0; font-size: 15px; color: #2c3e50;"><strong>CGPA:</strong> 9.31 / 10</p>
+      <p style="margin: 5px 0; font-size: 15px; color: #2c3e50;"><strong>Percentage:</strong> 93%</p></div>
+    </div>
+
+    <!-- SSC -->
+    <div >
+      <h3 style="margin: 0; font-size: 22px; color: #2c3e50;">SSC</h3>
+      <div style="background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+      <p style="margin: 5px 0; font-size: 16px; color: #555;">Bhashyam High School</p>
+      <p style="margin: 5px 0; font-size: 15px; color: #777;">2019 – 2020</p>
+      <p style="margin: 5px 0; font-size: 15px; color: #2c3e50;"><strong>GPA:</strong> 9.9 / 10</p>
+      <p style="margin: 5px 0; font-size: 15px; color: #2c3e50;"><strong>Percentage:</strong> 99%</p></div>
+    </div>
+  </div>
+</section>
+<!-- Work Experience Section -->
+<section id="experience" style="padding: 60px 20px;">
+  <div style="max-width: 900px; margin: auto;">
+    <h2 style="text-align: center; font-size: 32px; margin-bottom: 30px; ">Work Experience</h2>
+    
+    <div style="background: #f9f9f9; padding: 20px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+      <h4 style="margin: 0; font-size: 22px; color: #555;">Data Analyst Intern</h4>
+      <p style="margin: 5px 0; font-size: 16px; color: #555;">Technical Hub Pvt. Ltd., Andhra Pradesh</p>
+      <p style="margin: 5px 0; font-size: 15px; color: #777;">May 2025 – June 2025</p>
+      <ul style="margin: 10px 0 0 20px; font-size: 15px; color: #555; line-height: 1.6;">
+        <li>Streamlined reporting workflows by creating Power BI dashboards, analyzing 1M+ rows of SQL datasets to track performance trends.</li>
+        <li>Applied DAX, Power Query, and optimized SQL queries for advanced data preprocessing, generating key metrics for monthly/quarterly insights.</li>
+        <li>Collaborated with cross-functional teams to define KPIs, improving efficiency of reporting by 20%.</li>
+        <li>Produced 10+ interactive dashboards and reports highlighting business trends and actionable insights for stakeholders.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+
+ <section id="projects" class="container">
+  <h2>Projects</h2>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\Screenshot 2025-08-23 195758.png" alt="AP Elections 2024 Dashboard">
+      <h3>AP Elections 2024 Dashboard</h3>
+      <p>Visualized constituency-wise results and turnout across 175 AP regions using real-time Power BI dashboards.</p>
+      <a href="https://app.powerbi.com/reportEmbed?reportId=effe4454-f7a8-4fd3-bbd4-cf838089a624&autoAuth=true&ctid=7359f896-71e2-4dae-b8a3-15cdf97f2f10&navigation=false&filterPaneEnabled=false&navContentPaneEnabled=false" target="_blank" class="btn-view">View Project</a>
+    </div>
+
+    <div class="project-card">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\Screenshot 2025-08-23 195632.png" alt="Coca-Cola Sales Analysis">
+      <h3>Coca-Cola Sales Analysis</h3>
+      <p>Built dashboards to uncover sales trends across six beverage brands and recommended improvements.</p>
+      <a href="https://app.powerbi.com/reportEmbed?reportId=01d38570-8e50-4958-8976-512ca5e6972f&autoAuth=true&ctid=7359f896-71e2-4dae-b8a3-15cdf97f2f10&navigation=false&filterPaneEnabled=false&navContentPaneEnabled=false&disablecdnExpiration=1755987876" target="_blank" class="btn-view">View Project</a>
+    </div>
+
+    <div class="project-card">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\Screenshot 2025-08-23 222158.png" alt="Placement Dashboard">
+      <h3>360° Placement Intelligence Dashboard</h3>
+      <p>Analyzed placement trends for 1200+ students using Power BI; automated KPI insights and training effectiveness.</p>
+      <a href="https://app.fabric.microsoft.com/reportEmbed?reportId=0ab461d9-191d-4ae6-85aa-097f6cd84ba5&autoAuth=true&ctid=7359f896-71e2-4dae-b8a3-15cdf97f2f10&navigation=false&filterPaneEnabled=false&navContentPaneEnabled=false" target="_blank" class="btn-view">View Project</a>
+    </div>
+
+    
+
+  </div>
+</section>
+
+
+<!-- Project Slideshow Section -->
+<section id="project-slideshow" class="container">
+  <h2>Project Screenshots</h2>
+
+  <div class="slideshow-container">
+
+    <!-- Slide 1 -->
+    <div class="mySlides fade">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\Screenshot 2025-08-23 195758.png" alt="AP Elections Dashboard" />
+      <div class="caption">AP Elections 2024 Dashboard</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\Screenshot 2025-08-23 215215.png" alt="AP Elections Dashboard" />
+      <div class="caption">AP Elections 2024 Dashboard</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\Screenshot 2025-08-23 215225.png" alt="AP Elections Dashboard" />
+      <div class="caption">AP Elections 2024 Dashboard</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\Screenshot 2025-08-23 215247.png" alt="AP Elections Dashboard" />
+      <div class="caption">AP Elections 2024 Dashboard</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\Screenshot 2025-08-23 215256.png" alt="AP Elections Dashboard" />
+      <div class="caption">AP Elections 2024 Dashboard</div>
+    </div>
+    <!-- Slide 2 -->
+    <div class="mySlides fade">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\Screenshot 2025-08-23 195632.png" alt="Coca-Cola Sales Analysis" />
+      <div class="caption">Coca-Cola Sales Analysis</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\Screenshot 2025-03-23 164829.png" alt="Coca-Cola Sales Analysis" />
+      <div class="caption">Coca-Cola Sales Analysis</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\Screenshot 2025-03-23 164653.png" alt="Coca-Cola Sales Analysis" />
+      <div class="caption">Coca-Cola Sales Analysis</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\Screenshot 2025-08-23 221650.png" alt="Coca-Cola Sales Analysis" />
+      <div class="caption">Coca-Cola Sales Analysis</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\Screenshot 2025-08-23 221702.png" alt="Coca-Cola Sales Analysis" />
+      <div class="caption">Coca-Cola Sales Analysis</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\Screenshot 2025-08-23 221714.png" alt="Coca-Cola Sales Analysis" />
+      <div class="caption">Coca-Cola Sales Analysis</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\Screenshot 2025-08-23 221725.png" alt="Coca-Cola Sales Analysis" />
+      <div class="caption">Coca-Cola Sales Analysis</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\Screenshot 2025-08-23 221737.png" alt="Coca-Cola Sales Analysis" />
+      <div class="caption">Coca-Cola Sales Analysis</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\Screenshot 2025-03-23 164849.png" alt="Coca-Cola Sales Analysis" />
+      <div class="caption">Coca-Cola Sales Analysis</div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="mySlides fade">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\Screenshot 2025-08-10 213231.png" alt="Placement Dashboard"/>
+      <div class="caption">360° Placement Intelligence Dashboard</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\Screenshot 2025-08-23 222158.png" alt="Placement Dashboard"/>
+      <div class="caption">360° Placement Intelligence Dashboard</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\Screenshot 2025-08-23 222342.png" alt="Placement Dashboard"/>
+      <div class="caption">360° Placement Intelligence Dashboard</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\Screenshot 2025-08-23 222220.png" alt="Placement Dashboard"/>
+      <div class="caption">360° Placement Intelligence Dashboard</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\Screenshot 2025-08-23 222322.png" alt="Placement Dashboard"/>
+      <div class="caption">360° Placement Intelligence Dashboard</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\Screenshot 2025-08-23 222233.png" alt="Placement Dashboard"/>
+      <div class="caption">360° Placement Intelligence Dashboard</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\Screenshot 2025-08-23 222305.png" alt="Placement Dashboard"/>
+      <div class="caption">360° Placement Intelligence Dashboard</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\Screenshot 2025-08-23 222250.png" alt="Placement Dashboard"/>
+      <div class="caption">360° Placement Intelligence Dashboard</div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="mySlides fade">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\Screenshot 2025-05-07 140047.png" alt="Hostel Food waste Management" />
+      <div class="caption">Hostel Food waste Management</div>
+    </div>
+    <div class="mySlides fade">
+      <img src="C:\Users\DELL\Desktop\portfolio\images\Screenshot 2025-02-25 115354.png" alt="Employee Analysis Dashboard" />
+      <div class="caption">Employee Analysis Dashboard</div>
+    </div>
+
+    <!-- Navigation Arrows -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+
+  <!-- Dots / Indicators -->
+  <div class="dots-container"><!-- 
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span>
+    <span class="dot" onclick="currentSlide(6)"></span>
+    <span class="dot" onclick="currentSlide(7)"></span>
+    <span class="dot" onclick="currentSlide(8)"></span>
+    <span class="dot" onclick="currentSlide(9)"></span>
+    <span class="dot" onclick="currentSlide(10)"></span>
+    <span class="dot" onclick="currentSlide(11)"></span>
+    <span class="dot" onclick="currentSlide(12)"></span>
+    <span class="dot" onclick="currentSlide(13)"></span>
+    <span class="dot" onclick="currentSlide(14)"></span>
+    <span class="dot" onclick="currentSlide(15)"></span>
+    <span class="dot" onclick="currentSlide(16)"></span>
+    <span class="dot" onclick="currentSlide(17)"></span>
+    <span class="dot" onclick="currentSlide(18)"></span>
+    <span class="dot" onclick="currentSlide(19)"></span>
+    <span class="dot" onclick="currentSlide(20)"></span>
+    <span class="dot" onclick="currentSlide(21)"></span>
+    <span class="dot" onclick="currentSlide(22)"></span>
+    <span class="dot" onclick="currentSlide(23)"></span> --><!-- 
+    <span class="dot" onclick="currentSlide(24)"></span>
+    <span class="dot" onclick="currentSlide(25)"></span>
+    <span class="dot" onclick="currentSlide(26)"></span>
+    <span class="dot" onclick="currentSlide(27)"></span>
+    <span class="dot" onclick="currentSlide(28)"></span>
+    <span class="dot" onclick="currentSlide(29)"></span> -->
+  </div>
+</section>
+
+
+  <!-- Contact Section -->
+<section id="contact" class="contact-section">
+  <h2>Contact Me</h2>
+  <div class="contact-container">
+
+    <!-- Address -->
+    <div class="contact-card">
+      <i class="fas fa-home"></i>
+      <h3>Visit Me</h3>
+      <p>Aditya Engineering College</p>
+    </div>
+
+    <!-- Phone -->
+    <div class="contact-card">
+      <i class="fas fa-phone-alt"></i>
+      <h3>Call Me</h3>
+      <p>+91 9491750838</p>
+    </div>
+
+    <!-- Email -->
+    <div class="contact-card">
+      <i class="fas fa-envelope"></i>
+      <h3>Email Me</h3>
+      <p>sravanikarnataka5@gmail.com</p>
+    </div>
+
+    <!-- LinkedIn -->
+    <div class="contact-card">
+      <i class="fab fa-linkedin"></i>
+      <h3>LinkedIn</h3>
+      <p><a href="https://www.linkedin.com/in/sravani-karnataka-3931a2255/" target="_blank">Sravani Karnataka</a></p>
+    </div>
+
+    <!-- GitHub -->
+    <div class="contact-card">
+      <i class="fab fa-github"></i>
+      <h3>GitHub</h3>
+      <p><a href="https://github.com/Karnatakasravani" target="_blank">Sravani_karnataka</a></p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Font Awesome for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+<!-- Font Awesome for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+/* Contact Section */
+.contact-section {
+  padding: 60px 20px;
+  text-align: center;
+  /*background: #fff;*/
+}
+
+/*.contact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #007bff;
+}*/
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.contact-card {
+  /*background: #fff;*/
+  padding: 20px;
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+/* Contact section headings fixed to blue */
+.contact-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #007bff !important; /* Always blue */
+}
+
+/* Make sure the main section title also stays visible */
+.contact-section h2 {
+  color: #007bff !important; /* Blue for heading */
+}
+
+.contact-card:hover {
+  transform: translateY(-10px);
+}
+
+.contact-card i {
+  font-size: 2rem;
+  color: #007bff; /* Bootstrap blue */
+  margin-bottom: 15px;
+}
+
+
+
+.contact-card p {
+  font-size: 1rem;
+  color: #555;
+}
+</style>
+
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 sravanikarnataka. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
+
+  <!-- Your Existing Sections (Hero, Skills, Education, Experience, Projects, Contact, etc.) -->
+  <!-- Keep all the code you already pasted here without removing -->
+
+
+
+  <!-- Dark Mode Script -->
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("dark-mode");
+      let isDark = document.body.classList.contains("dark-mode");
+      document.querySelector(".mode-toggle").textContent = isDark ? "☀️ Light Mode" : "🌙 Dark Mode";
+      localStorage.setItem("mode", isDark ? "dark" : "light");
+    }
+    window.onload = () => {
+      if(localStorage.getItem("mode") === "dark"){
+        document.body.classList.add("dark-mode");
+        document.querySelector(".mode-toggle").textContent = "☀️ Light Mode";
+      }
+    }
+  </script>
+
+  <!-- Balls Background Script -->
+  <script>
+    function createBalls() {
+      const container = document.getElementById("balls-bg");
+      for(let i=0; i<15; i++) {
+        let ball = document.createElement("div");
+        let size = Math.random() * 40 + 20;
+        ball.classList.add("ball");
+        ball.style.width = `${size}px`;
+        ball.style.height = `${size}px`;
+        ball.style.background = `rgba(${Math.random()*255}, ${Math.random()*255}, ${Math.random()*255}, 0.4)`;
+        ball.style.left = `${Math.random() * 100}vw`;
+        ball.style.top = `${Math.random() * 100}vh`;
+        ball.style.animationDuration = `${15 + Math.random() * 10}s`;
+        container.appendChild(ball);
+      }
+    }
+    createBalls();
+  </script>
+</body>
+</html>
